@@ -83,7 +83,8 @@ class Hotel(Resource):
     
     def put(self, hotel_id):
         dados = Hotel.argumentos.parse_args()
-        novo_hotel = {'hotel_id': hotel_id, **dados}
+        hotel_objeto = HotelModel(hotel_id, **dados)
+        novo_hotel = hotel_objeto.json()
         hotel = Hotel.find_hotel(hotel_id)
         if hotel:
             hotel.update(novo_hotel)
