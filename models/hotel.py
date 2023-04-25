@@ -30,3 +30,7 @@ class HotelModel(banco.Model):
         if hotel:
             return hotel
         return None
+    
+    def save_hotel(self):
+        banco.session.add(self)
+        banco.session.commit()
