@@ -40,3 +40,4 @@ class UserModel(banco.Model):
     def delete_user(self):
         banco.session.delete(self)
         banco.session.commit()
+
